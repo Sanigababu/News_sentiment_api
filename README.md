@@ -9,30 +9,42 @@ A FastAPI-based service that fetches news for Indian stock symbols, analyzes sen
 - **Sentiment Analysis**: Powered by Groq’s LLaMA 3 70B model for contextual accuracy  
 - **Database Storage**: SQLite database for result persistence
 
-## 🛠 Setup Instructions
+## 🛠 Setup Instructions(Local)
 
-
-### 1. Clone the repository
-```
-
-```
-### 2. Add your GROQ_API_Key
+### 1. Add your GROQ_API_Key
 ```bash
 GROQ_API_KEY=your api key
 
 ```
-### 1. Install Dependencies
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run the Application
+### 3. Run the Application
 ```bash
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-### 3. Access API Documentation
+### 4. Access API Documentation
 Open your browser and go to: http://127.0.0.1:8000/docs
+
+## Dockerized Setup
+
+### 1. Build docker image
+```bash
+docker-compose build
+```
+
+### 2. Start the Container
+```bash
+docker-compose up
+```
+### 3. Open in Browser
+Go to: http://localhost:8000/docs to try the API.
+
+✅ The news.db file is mounted via volume, ensuring data persists across runs.
+
 
 ## 📡 API Usage
 
