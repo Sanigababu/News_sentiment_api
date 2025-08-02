@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  news-sentiment-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+      - ./news.db:/app/news.db
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
